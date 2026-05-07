@@ -1,8 +1,8 @@
 //! Pkarr based address lookup for iroh, supporting both relay servers and the DHT.
 //!
 //! This module contains pkarr-based address lookup for iroh which can use both pkarr
-//! relay servers as well as the Mainline DHT directly.  See the [pkarr module] for an
-//! overview of pkarr.
+//! relay servers as well as the Mainline DHT directly.  See the [pkarr module] in the
+//! `iroh-dns` crate for an overview of pkarr.
 //!
 //! [pkarr module]: iroh_dns::pkarr
 use std::sync::{Arc, Mutex};
@@ -66,7 +66,8 @@ fn mutable_item_to_signed_packet(
 /// Pkarr Mainline DHT and relay server address lookup.
 ///
 /// It stores endpoint addresses in DNS records, signed by the endpoint's private key, and publishes
-/// them to the BitTorrent Mainline DHT.  See the [pkarr module] for more details.
+/// them to the BitTorrent Mainline DHT.  See the [pkarr module] in the `iroh-dns` crate
+/// for more details.
 ///
 /// This implements the [`AddressLookup`] trait to be used as an address lookup service which can
 /// be used as both a publisher and resolver.  Calling [`DhtAddressLookup::publish`] will start
